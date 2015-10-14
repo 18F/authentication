@@ -38,7 +38,7 @@ There are a number of ways to do this. Each internal application may contain
 logic to process an OAuth token from an authentication system such as MyUSA,
 Google Accounts, GitHub, etc., and every application can use the same API key.
 
-Alternatively, proxy servers such as [bitly/oauth2_proxy]({{ site.baseurl }}/oauth2_proxy/)
+Alternatively, proxy servers such as [bitly/oauth2_proxy]({{ site.baseurl }}/oauth/oauth2_proxy/)
 can provide flexibility in how OAuth credentials are shared across
 applications, and can even provide authentication for static web sites,
 described next.
@@ -50,7 +50,7 @@ that can be served directly by a standard web server, and therefore contain no
 logic of their own to authenticate and authorize requests. By definition, they
 do not contain application logic that can authenticate or authorize requests.
 
-However, common web servers such as [Nginx](https://nginx.org/) provide the
+However, common web servers such as [Nginx](http://nginx.org/) provide the
 capability to proxy requests through servers such as
 [bitly/oauth2_proxy]({{ site.baseurl }}/oauth2_proxy/), and configured
 properly, a single proxy can authorize access to any number of static sites.
