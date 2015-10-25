@@ -29,14 +29,48 @@ navigation:
 - text: Introduction
   url: index.html
   internal: true
+- text: Basic components
+  url: basic-components/
+  internal: true
+- text: Authentication vs. authorization
+  url: authentication-vs-authorization/
+  internal: true
 - text: Use cases
   url: use-cases/
+  internal: true
+  children:
+  - text: Authorizing user access to applications
+    url: application-access/
+    internal: true
+  - text: Authorizing application access via Single Sign-On
+    url: sso/
+    internal: true
+  - text: Authorizing access to static web sites
+    url: static-site-authorization/
+    internal: true
+  - text: Authenticating webhooks
+    url: webhooks/
+    internal: true
+  - text: Authorizing API access
+    url: api-access/
+    internal: true
+  - text: Authorizing access by both humans and systems
+    url: human-and-system-access/
+    internal: true
+  - text: Intranet without VPN
+    url: intranet-without-vpn/
+    internal: true
+- text: HTTPS and SSL/TLS
+  url: https/
   internal: true
 - text: Avoiding replay attacks
   url: avoiding-replay-attacks/
   internal: true
-- text: HTTPS and SSL/TLS
-  url: https/
+- text: Basic access authentication
+  url: basic-access-authentication/
+  internal: true
+- text: Digest access authentication
+  url: digest-access-authentication/
   internal: true
 - text: Oauth
   url: oauth/
