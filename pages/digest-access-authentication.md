@@ -31,6 +31,8 @@ Modules implementing digest authentication exist for
 [Nginx](https://www.nginx.com/resources/wiki/modules/auth_digest/) and
 [Apache](http://httpd.apache.org/docs/2.2/mod/mod_auth_digest.html).
 
+It is thoroughly understood and has been tested for years.
+
 ## Drawbacks
 
 The implementation is significantly more complex than basic authentication,
@@ -40,3 +42,6 @@ The user must still be prompted for a password, which the browser or user
 agent must manage.
 
 There is no validation of the integrity of the request.
+
+However, combining this with TLS, we ensure authentication, integrity, and
+confidentiality.
