@@ -72,6 +72,9 @@ navigation:
 - text: Digest access authentication
   url: digest-access-authentication/
   internal: true
+- text: Client-side certs
+  url: client-side-certs/
+  internal: true
 - text: Oauth
   url: oauth/
   internal: true
