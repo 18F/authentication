@@ -55,11 +55,6 @@ altered during transmission.
 It is ideal for requests between systems that do not require human
 intervention or specific user authorization.
 
-Rather than using nonces for [replay attack
-protection]({{ site.baseurl }}/avoiding-replay-attacks/), the signature itself
-can be used to identify replayed requests, since the signature is
-content-dependent.
-
 When using [oauth2_proxy]({{ site.baseurl }}/oauth/oauth2_proxy/) as a
 [Single Sign-On]({{ site.baseurl }}/use-cases/sso/) mechanism, the user only
 needs to grant permission once to access multiple applications authenticated
@@ -70,6 +65,8 @@ using the proxy, which can be used to provide an
 
 The shared key must be carefully managed.
 
+There is no canonical implementation.
+
 The string used to produce the cryptographic signature must be carefully
 constructed to avoid having different requests produce the same hash value.
 
@@ -77,6 +74,11 @@ Straightforward implementations read the entire request body into memory to
 compute the signature. Large request bodies will require a more complex
 implementation, or should be dropped by the server before signature
 computation.
+
+[Replay attacks]({{ site.baseurl }}/avoiding-replay-attacks/) are possible if
+there isn't an additional nonce check. When combined with TLS, however, we
+guarantee authentication, integrity, and confidentiality.
+
 
 ## Further reading
 
