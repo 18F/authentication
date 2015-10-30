@@ -65,7 +65,11 @@ using the proxy, which can be used to provide an
 
 The shared key must be carefully managed.
 
-There is no canonical implementation.
+There is no canonical implementation. GitHub's
+[Webhooks](https://developer.github.com/webhooks/securing/) only considers the
+request payload; Amazon
+[requires](http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html)
+a separate time stamp field, etc. etc.
 
 The string used to produce the cryptographic signature must be carefully
 constructed to avoid having different requests produce the same hash value.

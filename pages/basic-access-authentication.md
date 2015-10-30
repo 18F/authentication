@@ -29,6 +29,9 @@ verifying this at the application layer.
 
 It is thoroughly understood and has been tested for years.
 
+If using a long user name and password composed of random strings, Basic Auth
+is on par with including an API key with each request.
+
 ## Drawbacks
 
 The Base64-encoded `username:password` value is not encrypted, and provides no
@@ -41,4 +44,5 @@ is no explicit logout mechanism.
 There is no automatic sharing of credentials from system to system.
 
 Though, when combined with TLS, authentication, integrity, and confidentiality
-is ensured, there's a high risk for accidentally leaking credentials.
+is ensured, there's a high risk for accidentally leaking credentials. Consider
+that, a missing "s" in a curl command would reveal the credentials.
