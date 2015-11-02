@@ -12,13 +12,16 @@ HTTPS provides secrecy regarding the content of a request, including the
 request method (GET, PUT, etc.), the URI of the requested resource, and any
 tokens and signatures that implement the authentication mechanism, all in
 addition to the request body itself. The only unencrypted components of the
-request are the hostname (or IP address) and port, which are necessary to
-route the request across the Internet.
+request are the IP address (and hostname if using
+[SNI](https://en.wikipedia.org/wiki/Server_Name_Indication)) and port, which
+are necessary to route the request across the Internet.
 
-HTTPS is a prerequisite for authentication, since none of the authentication
-mechanisms encrypt the request, including the HTTP headers containing
-authentication credentials. The initial encryption handshake is required to
-authenticate the server to the client, and the encrypted connection is
-required to authenticate the client to the server without leaking credentials,
-reducing the likelihood of
-[replay attacks]({{ site.baseurl }}/avoiding-replay-attacks/).
+HTTPS ensures confidentiality and integrity, which are generally assumed for
+the authentication methods described here. Unless explicitly told otherwise,
+clients which initiate an HTTPS request will verify the validity of the
+server's certificate. In this regard, the client can be relatively certain
+that the server is who it claims to be. The same system can be used by servers
+to [validate]({{ site.baseurl }}/client-side-certs/) a client's identity. TLS
+connections are not vulnerable to
+[replay attacks]({{ site.baseurl }}/avoiding-replay-attacks/); an eavesdropper
+cannot replay packets on the wire to any ill effect.
